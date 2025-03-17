@@ -5,6 +5,7 @@ export default function Card({ name, userName, avatar}) {
     const [isFollowing, setIsFollowing] = useState(false)
 
     const text = isFollowing ? 'Following' : 'Follow'
+    const buttonStyle = isFollowing ? 'btn btn-primary' : 'btn btn-danger' 
 
     const handleClick = () => {
         setIsFollowing(!isFollowing)
@@ -28,7 +29,7 @@ export default function Card({ name, userName, avatar}) {
                         </h6>
                     </section>
                     <aside>
-                        <button type="button" className="btn btn-primary" onClick={handleClick}>{text}</button>
+                        <button type="button" className={buttonStyle} onClick={handleClick}>{text}</button>
                     </aside>
                 </div>
             </div>       
